@@ -3,4 +3,4 @@ import pandas
 import requests
 from urllib.error import URLError
 
-streamlit.title('New Healthy Menu')
+streamlit.title('SNOWFLAKE DASHBOARDS')
