@@ -10,4 +10,9 @@ df=st.write(pd.DataFrame({
     'second column': [10, 20, 30, 40]
 }))
 
-st.line_chart(df)
+if st.checkbox('Show dataframe'):
+    chart_data = pd.DataFrame(
+       np.random.randn(20, 3),
+       columns=['a', 'b', 'c'])
+
+    chart_data
