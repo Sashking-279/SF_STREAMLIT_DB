@@ -1,6 +1,6 @@
-import streamlit
-import pandas
+import streamlit as st
+import pandas as pd
 import requests
 from urllib.error import URLError
 
-streamlit.title('SNOWFLAKE DASHBOARDS')
+st.title('SNOWFLAKE DASHBOARDS')
