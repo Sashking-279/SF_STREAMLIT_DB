@@ -18,9 +18,9 @@ if st.checkbox('Show dataframe'):
 
     chart_data
 
-user_input = st.text_input("label goes here", default_value_goes_here)
-password_input = st.text_input("label goes here", default_value_goes_here)
-account_input = st.text_input("label goes here", default_value_goes_here)
+user_input = st.text_input("label goes here")
+password_input = st.text_input("label goes here")
+account_input = st.text_input("label goes here")
 
 
 conn = st.connection("snowflake")
