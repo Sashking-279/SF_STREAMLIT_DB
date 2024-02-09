@@ -18,6 +18,11 @@ if st.checkbox('Show dataframe'):
 
     chart_data
 
+user_input = st.text_input("label goes here", default_value_goes_here)
+password_input = st.text_input("label goes here", default_value_goes_here)
+account_input = st.text_input("label goes here", default_value_goes_here)
+
+
 conn = st.connection("snowflake")
 df = conn.query("SELECT * from mapping_table;", ttl=600)
 st.write(df)
