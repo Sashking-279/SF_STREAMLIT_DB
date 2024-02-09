@@ -19,7 +19,7 @@ if st.checkbox('Show dataframe'):
     chart_data
 
 conn = st.connection("snowflake")
-df = conn.query("SELECT * from mappingtable;", ttl=600)
+df = conn.query("SELECT * from mapping_table;", ttl=600)
 # new_session = Session.builder.configs(connection_parameters).create()
 # tableName = 'S_T_VALIDATION.Test.MAPPING_TABLE'
 # df_table = new_session.table(tableName)
