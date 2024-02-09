@@ -25,3 +25,8 @@ st.write(df)
 # tableName = 'S_T_VALIDATION.Test.MAPPING_TABLE'
 # df_table = new_session.table(tableName)
 # df=df_table.to_pandas()
+
+df = conn.execute("SELECT user_name, COUNT(user_name) AS num_of_logins FROM snowflake.account_usage.login_history GROUP BY user_name")
+
+# Create a bar chart
+st.bar_chart(df, x="user_name", y="num_of_logins")
