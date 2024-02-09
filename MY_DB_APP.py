@@ -20,6 +20,7 @@ if st.checkbox('Show dataframe'):
 
 conn = st.connection("snowflake")
 df = conn.query("SELECT * from mapping_table;", ttl=600)
+st.write(df)
 # new_session = Session.builder.configs(connection_parameters).create()
 # tableName = 'S_T_VALIDATION.Test.MAPPING_TABLE'
 # df_table = new_session.table(tableName)
