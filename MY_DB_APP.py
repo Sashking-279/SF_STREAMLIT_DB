@@ -29,4 +29,4 @@ st.write(df)
 df = conn.query("SELECT user_name, COUNT(user_name) AS num_of_logins FROM snowflake.account_usage.login_history GROUP BY user_name")
 
 # Create a bar chart
-st.bar_chart(df, x="user_name", y="num_of_logins")
+st.bar_chart(df, x="USER_NAME", y="NUM_OF_LOGINS")
