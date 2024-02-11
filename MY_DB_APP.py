@@ -14,14 +14,11 @@ account = st.text_input('Snowflake Account Identifier ', placeholder='Enter your
 
 
 conn = st.connection("snowflake")
-df = conn.query("SELECT * from mapping_table;", ttl=600)
+
+	
+
+df = conn.query("SHOW ROLES;", ttl=600)
+df = conn.query("SELECT "name" as ROLES ,"assigned_to_users" as ASSIGNED_TO_USERS FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) WHERE 
+		"assigned_to_users" >= 1; ", ttl=600)
+
 st.write(df)
-# new_session = Session.builder.configs(connection_parameters).create()
-# tableName = 'S_T_VALIDATION.Test.MAPPING_TABLE'
-# df_table = new_session.table(tableName)
-# df=df_table.to_pandas()
-
-df = conn.query("SELECT user_name, COUNT(user_name) AS num_of_logins FROM snowflake.account_usage.login_history GROUP BY user_name")
-
-# Create a bar chart
-st.bar_chart(df, x="USER_NAME", y="NUM_OF_LOGINS")
