@@ -4,22 +4,12 @@ import requests
 import numpy as np
 from urllib.error import URLError
 
-st.title('SNOWFLAKE DASHBOARDS')
-st.write("Here's our first attempt at using data to create a table:")
-df=st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-}))
 
-if st.checkbox('Show dataframe'):
-    chart_data = pd.DataFrame(
-       np.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
+user_name = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
+password = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
+account = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
 
-    chart_data
-hello='like'
 
-title = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
 
 conn = st.connection("snowflake")
 df = conn.query("SELECT * from mapping_table;", ttl=600)
