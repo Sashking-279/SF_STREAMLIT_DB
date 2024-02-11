@@ -19,7 +19,7 @@ if st.checkbox('Show dataframe'):
     chart_data
 hello='like'
 
-title = st.text_input('Snowflake User name', 'Enter your SF username here')
+title = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
 
 conn = st.connection("snowflake")
 df = conn.query("SELECT * from mapping_table;", ttl=600)
