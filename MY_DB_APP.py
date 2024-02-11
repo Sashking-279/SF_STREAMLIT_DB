@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 import numpy as np
 from urllib.error import URLError
+import Pyarrow
 
 st.title('SNOWFLAKE DASHBOARDS')
 st.write("Here's our first attempt at using Snowflake data to create a Dashboards:")
