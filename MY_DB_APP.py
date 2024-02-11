@@ -4,6 +4,8 @@ import requests
 import numpy as np
 from urllib.error import URLError
 
+st.title('SNOWFLAKE DASHBOARDS')
+st.write("Here's our first attempt at using Snowflake data to create a Dashboards:")
 
 user_name = st.text_input('Snowflake User name', placeholder='Enter your SF username here',key=1)
 password = st.text_input('Snowflake Password', placeholder='Enter your SF password here',key=2)
