@@ -5,9 +5,9 @@ import numpy as np
 from urllib.error import URLError
 
 
-user_name = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
-password = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
-account = st.text_input('Snowflake User name', placeholder='Enter your SF username here')
+user_name = st.text_input('Snowflake User name', placeholder='Enter your SF username here',key=1)
+password = st.text_input('Snowflake Password', placeholder='Enter your SF password here',key=2)
+account = st.text_input('Snowflake Account Identifier ', placeholder='Enter your SF account identifier here',key=3)
 
 
 
