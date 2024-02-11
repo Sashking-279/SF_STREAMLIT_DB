@@ -18,7 +18,7 @@ conn = st.connection("snowflake")
 	
 
 df1 = conn.query("SHOW ROLES;", ttl=600)
-df1 = conn.query('SELECT "name" as ROLES ,"assigned_to_users" as ASSIGNED_TO_USERS FROM ' + df1 + ' WHERE 
+df1 = conn.query('SELECT "name" as ROLES ,"assigned_to_users" as ASSIGNED_TO_USERS FROM table(result_scan(last_query_id())) WHERE 
 		"assigned_to_users" >= 1; ', ttl=600)
 
 st.write(df)
